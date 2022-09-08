@@ -4,7 +4,9 @@ let cDrop = document.getElementById('drop2');
 let fList = document.getElementById('featuresList');
 let cList = document.getElementById('companyList');
 
-
+let dropMenu = document.getElementById('dropMenu');
+let leftNav = document.getElementById('leftNav');
+let blackWrapper = document.getElementById('blackWrapper');
 
 
 fDrop.addEventListener('click', ()=>{
@@ -34,3 +36,18 @@ cDrop.addEventListener('click', ()=>{
     cDrop.addEventListener('click', changeImg())
 });
 
+
+
+dropMenu.addEventListener('click', () => {
+    leftNav.classList.toggle('visible');
+    blackWrapper.classList.toggle('visible');
+    function changeSvg() {
+        let menu = dropMenu.src;
+        if (menu.indexOf('icon-menu.svg')!=-1) {
+            document.getElementById("dropMenu").src = 'img/icon-menu.svg'
+        } else [
+            document.getElementById("dropMenu").src ='img/icon-close-menu.svg'
+        ]
+    }
+    dropMenu.addEventListener('click', changeSvg())
+})
