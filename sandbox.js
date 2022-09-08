@@ -44,9 +44,10 @@ dropMenu.addEventListener('click', () => {
     function changeSvg() {
         let menu = dropMenu.src;
         if (menu.indexOf('icon-menu.svg')!=-1) {
-            document.getElementById("dropMenu").src = 'img/icon-menu.svg'
+            document.getElementById("dropMenu").src = 'img/icon-close-menu.svg'
+            document.getElementById("dropMenu").src.classList.toggle('close');
         } else [
-            document.getElementById("dropMenu").src ='img/icon-close-menu.svg'
+            document.getElementById("dropMenu").src ='img/icon-menu.svg'
         ]
     }
     dropMenu.addEventListener('click', changeSvg())
